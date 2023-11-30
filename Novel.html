@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Novel Writing Platform</title>
+    <style>
+        /* Resetting some default styles for better consistency */
+        body, h1, h2, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: black;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: orange;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        section {
+            padding: 50px;
+            text-align: center;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .chapter {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-family: 'Arial';
+            font-size: 36px;
+            line-height: 42px;
+            text-align: center;
+            text-transform: uppercase;
+            text-shadow: 0 2px gold, 0 3px #E0BFB8;
+            font-weight: 600;
+            color: white;
+            margin: 50px 0;
+            padding: 15px;
+            border-left: 5px :#89CFF0;
+    	    background-color: orange;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #555;
+        }
+
+        .active {
+            background-color: lime;
+        }
+
+	footer {
+            font-size: 25px;
+	    text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>Launch into Literary Worlds</h1>
+
+<!-- Novel Writing Platform Content -->
+<section id="home">
+    <h2>Welcome to My Novel</h2>
+    <p>Read and follow along as the story unfolds. Join the journey!</p>
+</section>
+
+<section id="write">
+    <h2>Write Your Novel</h2>
+    <form>
+        <label for="chapterTitle">Chapter Title:</label>
+        <input type="text" id="chapterTitle" name="chapterTitle" required>
+
+        <label for="chapterContent">Chapter Content:</label>
+        <textarea id="chapterContent" name="chapterContent" rows="6" required></textarea>
+
+        <button type="submit">Publish Chapter</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2023 Novel Writing Platform</p>
+</footer>
+
+</body>
+</html>

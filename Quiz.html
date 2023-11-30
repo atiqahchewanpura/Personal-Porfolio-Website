@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Quiz Game</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+	    background-color:none;
+	    background-image: url(game1.jpg);
+	    background-size: contain;
+	    background-position-x: center;
+	    background-position-y: center;
+        }
+
+        #quiz-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+	    background-color:#43C6DB;
+        }
+
+        h1 {
+            color: #007bff;
+            text-align: center;
+        }
+
+        #question-container {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        #result-container {
+            text-align: center;
+        }
+
+        #score {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        #submit-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="quiz-container">
+        <h1>Web Development Quiz</h1>
+        <div id="question-container">
+            <!-- Questions will be inserted here dynamically -->
+        </div>
+        <div id="result-container">
+            <p id="score">Score: <span id="score-value">0</span></p>
+            <button id="submit-btn">Submit</button>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "What does HTML stand for?",
+                options: ["Hyper Text Markup Language", "High Tech Machine Learning", "Hyper Transfer Markup Language"],
+                correctAnswer: 0
+            },
+            {
+                question: "Which tag is used to create a hyperlink in HTML?",
+                options: ["<a>", "<h>", "<p>"],
+                correctAnswer: 0
+            },
+            {
+                question: "CSS stands for?",
+                options: ["Counter Strike: Source", "Computer Style Sheets", "Cascading Style Sheets"],
+                correctAnswer: 2
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        const questionContainer = document.getElementById("question-container");
+        const scoreValue = document.getElementById("score-value");
+
+        function loadQuestion() {
+            const currentQ = questions[currentQuestion];
+
+            questionContainer.innerHTML = `
+                <p>${currentQ.question}</p>
+                <form id="question-form">
+                    ${currentQ.options.map((option, index) => `
+                        <label>
+                            <input type="radio" name="answer" value="${index}">
+                            ${option}
+                        </label>
+                    `).join('')}
+                </form>
+            `;
+        }
+
+        function calculateScore() {
+            const form = document.getElementById("question-form");
+            const selectedAnswer = form.querySelector('input[name="answer"]:checked');
+
+            if (selectedAnswer) {
+                const userAnswer = parseInt(selectedAnswer.value);
+
+                if (userAnswer === questions[currentQuestion].correctAnswer) {
+                    score++;
+                }
+
+                currentQuestion++;
+                scoreValue.textContent = score;
+
+                if (currentQuestion < questions.length) {
+                    loadQuestion();
+                } else {
+                    showResult();
+                }
+            }
+        }
+
+        function showResult() {
+            questionContainer.innerHTML = `
+                <p>Quiz Completed!</p>
+                <p>Your Final Score: ${score}/${questions.length}</p>
+            `;
+            document.getElementById("result-container").style.display = "none";
+        }
+
+        document.getElementById("submit-btn").addEventListener("click", calculateScore);
+
+        // Initial load
+        loadQuestion();
+    </script>
+</body>
+</html>
