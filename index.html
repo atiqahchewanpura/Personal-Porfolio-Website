@@ -10,24 +10,20 @@
   <style>
     img {
       display: block;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto;
       width: 100%;
       max-width: 300px;
       height: auto;
       border-radius: 25px;
       background: none;
       padding: 20px;
-      float: none;
     }
 
     h1 {
       font-family: 'Arial';
       font-size: 30px;
       line-height: 42px;
-      margin-left: 10px;
-      margin-right: 10px;
-      padding: 15px 0 15px 0;
+      margin: 10px;
       text-align: center;
       text-transform: uppercase;
       text-shadow: 0 2px gold, 0 3px #E0BFB8;
@@ -40,34 +36,32 @@
       font-size: 16px;
       line-height: 20px;
       text-indent: 15px;
-      margin-left: 10px;
-      margin-right: 10px;
-      padding-left: 10px;
-      padding-right: 10px;
-      padding-bottom: 10px;
-      padding-top: 0;
+      margin: 10px;
+      text-align: justify;
+      padding: 10px;
       border-left: 10px solid #89CFF0;
       background-color: #3A9BDC;
-      display: block;
     }
 
     ul {
       list-style-type: none;
       margin: 0;
       padding: 0;
-      overflow: hidden;
       background-color: black;
+      position: fixed;
+      height: 100%;
+      width: 150px;
+      overflow: auto;
     }
 
     li {
       text-align: center;
-      float: none;
+      margin-top: 10px;
     }
 
     li a {
       display: block;
       color: white;
-      text-align: center;
       padding: 14px 16px;
       text-decoration: none;
     }
@@ -83,7 +77,7 @@
     body,
     html {
       background-image: url(fav11.jpg);
-      background-size: 100% 100%;
+      background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       margin: 0;
@@ -92,6 +86,7 @@
     }
 
     .content-section {
+      margin-left: 160px; /* Adjusted margin to account for the width of the sidebar */
       text-align: center;
       padding: 20px;
     }
@@ -117,10 +112,10 @@
 <body>
 
   <ul>
-    <li class='active'><a href="http://atiqahchewanpura.github.io/Personal-Porfolio-Website/index.html">Home</a></li>
-    <li><a href="http://atiqahchewanpura.github.io/Personal-Porfolio-Website/about.html">About Me</a></li>
-    <li><a href="http://atiqahchewanpura.github.io/Personal-Porfolio-Website/Project.html">Project</a></li>
-    <li><a href="http://atiqahchewanpura.github.io/Personal-Porfolio-Website/Contact.html">Contact Me</a></li>
+    <li class='active'><a href="#home">Home</a></li>
+    <li><a href="#about">About Me</a></li>
+    <li><a href="#project">Project</a></li>
+    <li><a href="#contact">Contact Me</a></li>
   </ul>
 
   <div class="content-section">
@@ -128,7 +123,7 @@
     <h1>Where Imagination Takes Flight: Atiqah's Literary Odyssey</h1>
     <p>"Welcome to my digital wonderland, the magical doorway to my creative cosmos! Bursting with the energy of Atiqah's Literary Odyssey, this portfolio is like a vibrant scrapbook of my adventures. Take a leap, plunge into the wonders of my projects, and let's unravel the mystery behind the magic. Join me on this adventure and your visit here marks the beginning of our exciting journey together! 🚀✨"
     </p>
-    <a href="http://atiqahchewanpura.github.io/Personal-Porfolio-Website/about.html" class="cta-button">LETS KNOW ME WELL</a>
+    <a href="#about" class="cta-button">LETS KNOW ME WELL</a>
   </div>
 
 </body>
